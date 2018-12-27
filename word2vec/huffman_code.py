@@ -14,9 +14,7 @@ def create_huffman_tree(input):
         right_child_value = input.pop(0)
 
         left_child = HuffManNode(left_child_value)
-        left_child.code = left_child.code + "1"
         right_child = HuffManNode(right_child_value)
-        right_child.code = right_child.code + "0"
         node_value = left_child_value + right_child_value
         node = HuffManNode(node_value)
         node.left_child = left_child
@@ -25,10 +23,8 @@ def create_huffman_tree(input):
         for n in node_list:
             if n.value == node.left_child.value:
                 node.left_child = n
-                node.left_child.code = '1'
             if n.value == node.right_child.value:
                 node.right_child = n
-                node.right_child.code = '0'
 
         node_list.append(node)
         input.append(node_value)
